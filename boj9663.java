@@ -21,7 +21,8 @@ public class boj9663 {
 	public static boolean boj9663(int l) {
 		if (!promising(l))
 			return false;
-		else if (l == N) {
+		
+		if (l == N) {
 			res += 1;
 			return false;
 		} else {
