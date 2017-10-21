@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class boj14502 {
-	static int N, M, nWalls = 0, nVirus = 0, minNVirus = Integer.MAX_VALUE;
+	static int N, M, nWall, nVirus, minNVirus = Integer.MAX_VALUE;
 	static int[] dx = { -1, 0, 1, 0 };
 	static int[] dy = { 0, 1, 0, -1 };
 	static int[][] map = new int[9][9];
@@ -27,12 +27,12 @@ public class boj14502 {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 1; j <= M; j++) {
 				map[i][j] = Integer.parseInt(st.nextToken());
-				nWalls += map[i][j] == 1 ? 1 : 0;
+				nWall += map[i][j] == 1 ? 1 : 0;
 			}
 		}
 
 		boj14502();
-		System.out.println(N * M - (nWalls + 3) - minNVirus);
+		System.out.println(N * M - (nWall + 3) - minNVirus);
 	}
 
 	public static void boj14502() {
@@ -44,7 +44,8 @@ public class boj14502 {
 							for (int ky = 1; ky <= M; ky++) {
 								if (map[ix][iy] != 0 || map[jx][jy] != 0 || map[kx][ky] != 0)
 									continue;
-								if (10 * ix + iy >= 10 * jx + jy || 10 * ix + iy >= 10 * kx + ky || 10 * jx + jy >= 10 * kx + ky)
+								if (10 * ix + iy >= 10 * jx + jy || 10 * ix + iy >= 10 * kx + ky
+										|| 10 * jx + jy >= 10 * kx + ky)
 									continue;
 								buildWalls(ix, iy, jx, jy, kx, ky);
 								findVirus();
