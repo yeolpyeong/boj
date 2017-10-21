@@ -8,7 +8,7 @@ package boj;
 import java.util.Scanner;
 
 public class boj14503 {
-	static int N, M, totalSumOfCleanSpace = 0;
+	static int N, M, totalSumOfCleanSpace;
 	static int[] dx = { 0, 1, 0, -1 };
 	static int[] dy = { -1, 0, 1, 0 };
 	static int[][] map = new int[51][51];
