@@ -8,7 +8,7 @@ package boj;
 import java.util.Scanner;
 
 public class boj14503 {
-	static int N, M, t = 0, sum = 1;
+	static int N, M, totalSumOfCleanSpace = 0;
 	static int[] dx = { 0, -1, 0, 1 };
 	static int[] dy = { -1, 0, 1, 0 };
 	static int[][] map = new int[51][51];
@@ -28,27 +28,29 @@ public class boj14503 {
 		}
 
 		map[r][c] = -1;
+		totalSumOfCleanSpace += 1;
 		boj14503(r, c, d);
-		System.out.println(sum);
+		System.out.println(totalSumOfCleanSpace);
 	}
 
 	public static void boj14503(int x, int y, int d) {
+		int nAdjacentCleanSpace = 0;
 		while (true) {
 			if (map[x + dx[d]][y + dy[d]] == 0) {
-				sum += 1;
+				totalSumOfCleanSpace += 1;
 				map[x += dx[d]][y += dy[d]] = -1;
 				d = (d + 3) % 4;
-				t = 0;
+				nAdjacentCleanSpace = 0;
 				continue;
 			} else {
 				d = (d + 3) % 4;
-				t++;
+				nAdjacentCleanSpace++;
 			}
 
-			if (t == 4) {
+			if (nAdjacentCleanSpace == 4) {
 				x += dx[(d + 3) % 4];
 				y += dy[(d + 3) % 4];
-				t = 0;
+				nAdjacentCleanSpace = 0;
 			}
 
 			if (map[x][y] == 1)
