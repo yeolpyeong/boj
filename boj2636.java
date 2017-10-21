@@ -79,7 +79,10 @@ public class boj2636 {
 		for (int i = 0; i < 4; i++) {
 			int nx = x + dx[i];
 			int ny = y + dy[i];
-			if (checkRange(nx, ny) && airMap[nx][ny] == -1) {
+			if (!checkRange(nx, ny))
+				return false;
+			
+			if (airMap[nx][ny] == -1) {
 				return true;
 			}
 		}
