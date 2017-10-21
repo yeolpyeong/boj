@@ -14,17 +14,18 @@ public class boj2302 {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
 		int M = sc.nextInt();
-		int res = 1;
-		int[] s = new int[N + 2];
-		for (int i = 1; i <= M; i++) {
-			s[i] = sc.nextInt();
-		}
-		s[M + 1] = N + 1;
+		int nCase = 1;
+		int[] fixedSeat = new int[N + 2];
 
-		for (int i = 0; i < M + 1; i++) {
-			res *= fivonacci(s[i + 1] - s[i]);
+		for (int i = 1; i <= M; i++) {
+			fixedSeat[i] = sc.nextInt();
 		}
-		System.out.println(res);
+		fixedSeat[M + 1] = N + 1;
+
+		for (int i = 0; i <= M; i++) {
+			nCase *= fivonacci(fixedSeat[i + 1] - fixedSeat[i]);
+		}
+		System.out.println(nCase);
 	}
 
 	public static int fivonacci(int N) {
