@@ -11,8 +11,8 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class boj14500 {
-	static int N, M, res = Integer.MIN_VALUE;
-	static int[][] map = new int[501][501], v;
+	static int N, M, max = Integer.MIN_VALUE;
+	static int[][] map = new int[501][501];
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -32,58 +32,58 @@ public class boj14500 {
 				boj14500(i, j);
 			}
 		}
-		System.out.println(res);
+		System.out.println(max);
 	}
 
 	public static void boj14500(int x, int y) {
 		int temp;
 		if (checkRange(x, y + 3)) {
 			temp = map[x][y] + map[x][y + 1] + map[x][y + 2] + map[x][y + 3];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 		}
 		if (checkRange(x + 3, y)) {
 			temp = map[x][y] + map[x + 1][y] + map[x + 2][y] + map[x + 3][y];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 		}
 		if (checkRange(x + 1, y + 1)) {
 			temp = map[x][y] + map[x + 1][y] + map[x][y + 1] + map[x + 1][y + 1];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 		}
 		if (checkRange(x + 1, y + 2)) {
 			temp = map[x][y] + map[x + 1][y] + map[x][y + 1] + map[x][y + 2];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x][y] + map[x][y + 1] + map[x][y + 2] + map[x + 1][y + 2];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x + 1][y] + map[x + 1][y + 1] + map[x][y + 2] + map[x + 1][y + 2];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x][y] + map[x + 1][y] + map[x + 1][y + 1] + map[x + 1][y + 2];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x][y] + map[x][y + 1] + map[x + 1][y + 1] + map[x + 1][y + 2];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x + 1][y] + map[x][y + 1] + map[x + 1][y + 1] + map[x][y + 2];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x + 1][y] + map[x][y + 1] + map[x + 1][y + 1] + map[x + 1][y + 2];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x][y] + map[x][y + 1] + map[x + 1][y + 1] + map[x][y + 2];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 		}
 		if (checkRange(x + 2, y + 1)) {
 			temp = map[x][y] + map[x + 1][y] + map[x + 2][y] + map[x + 2][y + 1];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x + 2][y] + map[x][y + 1] + map[x + 1][y + 1] + map[x + 2][y + 1];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x][y] + map[x][y + 1] + map[x + 1][y + 1] + map[x + 2][y + 1];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x][y] + map[x + 1][y] + map[x + 2][y] + map[x][y + 1];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x + 1][y] + map[x + 2][y] + map[x][y + 1] + map[x + 1][y + 1];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x][y] + map[x + 1][y] + map[x + 1][y + 1] + map[x + 2][y + 1];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x][y] + map[x + 1][y] + map[x + 2][y] + map[x + 1][y + 1];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 			temp = map[x + 1][y] + map[x][y + 1] + map[x + 1][y + 1] + map[x + 2][y + 1];
-			res = temp > res ? temp : res;
+			max = temp > max ? temp : max;
 		}
 	}
 
