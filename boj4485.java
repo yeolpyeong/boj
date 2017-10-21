@@ -42,7 +42,7 @@ public class boj4485 {
 		d[cx][cy] = map[cx][cy];
 		Queue<int[]> q = new LinkedList<int[]>();
 		q.add(new int[] { cx, cy });
-
+ 
 		while (!q.isEmpty()) {
 			int[] l = q.poll();
 			cx = l[0];
