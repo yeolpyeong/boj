@@ -8,7 +8,7 @@ package boj;
 import java.util.Scanner;
 
 public class boj1182 {
-	static int N, S, c = 0, res = 0;
+	static int N, S, count, sum;
 	static int[] d = new int[21];
 
 	public static void main(String[] args) {
@@ -19,22 +19,20 @@ public class boj1182 {
 		for (int i = 1; i <= N; i++)
 			d[i] = sc.nextInt();
 
-		baekjoon1182(1);
-		System.out.println(c);
+		boj1182(1);
+		System.out.println(count);
 	}
 
-	public static void baekjoon1182(int n) {
+	public static void boj1182(int n) {
 		if (n > N)
 			return;
 
-		if (res + d[n] == S)
-			c++;
+		if (sum + d[n] == S)
+			count++;
 
-		baekjoon1182(n + 1);
-
-		res += d[n];
-		baekjoon1182(n + 1);
-
-		res -= d[n];
+		boj1182(n + 1);
+		sum += d[n];
+		boj1182(n + 1);
+		sum -= d[n];
 	}
 }
