@@ -18,8 +18,8 @@ public class boj1012 {
 		while (T-- > 0) {
 			M = sc.nextInt();
 			N = sc.nextInt();
-			int K = sc.nextInt();
 			map = new int[M][N];
+			int K = sc.nextInt();
 
 			while (K-- > 0) {
 				map[sc.nextInt()][sc.nextInt()] = 1;
