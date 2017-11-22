@@ -35,7 +35,7 @@ public class boj1316 {
 			} else {
 				return 0;
 			}
-		}
+		} 
 		return 1;
 	}
 }
