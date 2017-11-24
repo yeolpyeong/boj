@@ -1,5 +1,5 @@
 /*
- * 2007
+ * 2007년
  * https://www.acmicpc.net/problem/1924
  */
 
