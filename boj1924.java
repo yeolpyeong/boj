@@ -1,5 +1,5 @@
 /*
- * 2007³â
+ * 2007
  * https://www.acmicpc.net/problem/1924
  */
 
