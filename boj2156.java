@@ -1,5 +1,5 @@
 /*
- * фВ╣╣аж ╫ц╫д
+ * М▐╛К▐└Лё╪ Л▀°Л▀²
  * https://www.acmicpc.net/problem/2156
  */
 
