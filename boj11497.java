@@ -1,5 +1,5 @@
 /*
- * 통나무 건너
+ * 통나무 건너뛰기
  * https://www.acmicpc.net/problem/11497
  */
 
