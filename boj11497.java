@@ -18,6 +18,7 @@ public class boj11497 {
 			for (int i = 1; i <= N; i++) {
 				numbers[i] = sc.nextInt();
 			}
+			
 			Arrays.sort(numbers);
 			int max = 0;
 			for (int i = 1; i <= N - 2; i++) {
