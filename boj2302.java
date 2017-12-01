@@ -23,18 +23,18 @@ public class boj2302 {
 		fixedSeat[M + 1] = N + 1;
 
 		for (int i = 0; i <= M; i++) {
-			nCase *= fivonacci(fixedSeat[i + 1] - fixedSeat[i]);
+			nCase *= fibonacci(fixedSeat[i + 1] - fixedSeat[i]);
 		}
 		System.out.println(nCase);
 	}
 
-	public static int fivonacci(int N) {
+	public static int fibonacci(int N) {
 		if (d[N] != 0)
 			return d[N];
 
 		if (N == 1 || N == 2)
 			return 1;
 		else
-			return d[N] = fivonacci(N - 2) + fivonacci(N - 1);
+			return d[N] = fibonacci(N - 2) + fibonacci(N - 1);
 	}
 }
