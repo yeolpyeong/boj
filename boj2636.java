@@ -54,7 +54,6 @@ public class boj2636 {
 			} else {
 				nRemainingCheese = nMeltingCheese;
 			}
-			
 			t++;
 		}
 	}
