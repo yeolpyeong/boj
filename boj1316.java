@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 public class boj1316 {
 	static int preChar;
-	static int[] alphabet;
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -18,7 +17,6 @@ public class boj1316 {
 		String[] S = new String[101];
 		for (int i = 1; i <= N; i++) {
 			preChar = 4444;
-			alphabet = new int[26];
 			S[i] = sc.next();
 			answer += boj1316(S[i]);
 		}
@@ -26,6 +24,7 @@ public class boj1316 {
 	}
 
 	public static int boj1316(String s) {
+		int[] alphabet = new int[26];
 		for (int i = 0; i < s.length(); i++) {
 			if (s.charAt(i) - 'a' == preChar)
 				continue;
