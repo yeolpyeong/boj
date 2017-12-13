@@ -1,0 +1,19 @@
+/*
+ * A+B - 4
+ * https://www.acmicpc.net/problem/10951
+ */
+
+package boj;
+
+import java.util.Scanner;
+
+public class boj10951 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNextInt()) {
+			int A = sc.nextInt();
+			int B = sc.nextInt();
+			System.out.println(A + B);
+		}
+	}
+}
