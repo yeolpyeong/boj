@@ -1,5 +1,5 @@
 /*
- * ฝรว่ ผบภ๛
+ * ์ํ— ์ฑ์ 
  * https://www.acmicpc.net/problem/9498
  */
 
