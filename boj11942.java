@@ -1,5 +1,5 @@
 /*
- * °í·Á´ë´Â »ç¶ûÀÔ´Ï´Ù.
+ * ê³ ë ¤ëŒ€ëŠ” ì‚¬ë‘ì…ë‹ˆë‹¤
  * https://www.acmicpc.net/problem/11942
  */
 
@@ -7,6 +7,6 @@ package boj;
 
 public class boj11942 {
 	public static void main(String[] args) {
-		System.out.print("°í·Á´ëÇĞ±³");
+		System.out.print("ê³ ë ¤ëŒ€í•™êµ");
 	}
 }
