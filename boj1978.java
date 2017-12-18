@@ -13,13 +13,13 @@ public class boj1978 {
 		int N = sc.nextInt();
 		int count = 0;
 		while (N-- > 0) {
-			if (boj1978(sc.nextInt()))
+			if (isPrime(sc.nextInt()))
 				count++;
 		}
 		System.out.print(count);
 	}
 
-	public static boolean boj1978(int n) {
+	public static boolean isPrime(int n) {
 		if (n == 1)
 			return false;
 
