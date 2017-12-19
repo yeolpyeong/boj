@@ -1,5 +1,5 @@
 /*
- * гпа║╟Х╩Й
+ * М∙≥Л═░ЙЁ└Л┌╟
  * https://www.acmicpc.net/problem/2754
  */
 
