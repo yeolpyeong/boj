@@ -33,5 +33,4 @@ public class boj2754 {
 		}
 		System.out.print(grade);
 	}
-
 }
