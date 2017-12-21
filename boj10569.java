@@ -1,5 +1,5 @@
 /*
- * �ٸ�ü
+ * 다면체
  * https://www.acmicpc.net/problem/10569
  */
 
