@@ -1,5 +1,5 @@
 /*
- * RGB°Å¸®
+ * RGBê±°ë¦¬
  * https://www.acmicpc.net/problem/1149
  */
 
