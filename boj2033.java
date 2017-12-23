@@ -1,5 +1,5 @@
 /*
- * �ݿø�
+ * 반올림
  * https://www.acmicpc.net/problem/2033
  */
 
