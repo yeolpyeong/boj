@@ -15,7 +15,7 @@ public class boj2960 {
 		int[] numbers = new int[N + 1];
 		int k = 0;
 		for (int i = 2; i <= N; i++) {
-			if (isPrime(i) && numbers[i] == 0) {
+			if (isPrime(i)) {
 				for (int j = 1; i * j <= N; j++) {
 					if (numbers[i * j] == 0) {
 						k++;
