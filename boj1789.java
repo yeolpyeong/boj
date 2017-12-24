@@ -1,5 +1,5 @@
 /*
- * ผ๖ต้ภว วี
+ * ์๋“ค์ ํ•ฉ
  * https://www.acmicpc.net/problem/1789
  */
 
