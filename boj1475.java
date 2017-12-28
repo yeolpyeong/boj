@@ -10,10 +10,10 @@ import java.util.Scanner;
 public class boj1475 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
+		String N = sc.next();
 		int[] numbers = new int[10];
-		for (int i = 0; i < String.valueOf(N).length(); i++) {
-			numbers[(int) String.valueOf(N).charAt(i) - '0']++;
+		for (int i = 0; i < N.length(); i++) {
+			numbers[(int) N.charAt(i) - '0']++;
 		}
 		numbers[6] = (int) Math.ceil((double) (numbers[6] + numbers[9]) / 2);
 		int max = 0;
