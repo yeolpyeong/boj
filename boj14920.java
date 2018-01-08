@@ -1,5 +1,5 @@
 /*
- * 3n+1 ¼ö¿­
+ * 3n+1 ìˆ˜ì—´
  * https://www.acmicpc.net/problem/14920
  */
 
