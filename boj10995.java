@@ -1,5 +1,5 @@
 /*
- * ∫∞¬Ô±‚ - 20
+ * Î≥ÑÏ∞çÍ∏∞ - 20
  * https://www.acmicpc.net/problem/10995
  */
 
