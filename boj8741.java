@@ -1,5 +1,5 @@
 /*
- * юлаЬ╪Ж гу
+ * Л²╢Л╖└Л┬≤ М∙╘
  * https://www.acmicpc.net/problem/8741
  */
 
