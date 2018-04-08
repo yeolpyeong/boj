@@ -1,5 +1,5 @@
 /*
- * Επ»η
+ * ν‡΄μ‚¬
  * https://www.acmicpc.net/problem/14501
  */
 
