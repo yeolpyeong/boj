@@ -1,5 +1,5 @@
 /*
- * 경로 구하기
+ * 경로 찾기
  * https://www.acmicpc.net/problem/11403
  */
 
