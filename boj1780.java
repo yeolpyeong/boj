@@ -1,5 +1,5 @@
 /*
- * а╬юлюг ╟Ё╪Ж
+ * Л╒┘Л²╢Л²≤ Й╟°Л┬≤
  * https://www.acmicpc.net/problem/1780
  */
 
