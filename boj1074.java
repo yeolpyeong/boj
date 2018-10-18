@@ -13,6 +13,7 @@ public class boj1074 {
 		int N = sc.nextInt();
 		int r = sc.nextInt();
 		int c = sc.nextInt();
+		
 		int count = 0;
 		double size = Math.pow(2, N);
 		while (size > 2) {
