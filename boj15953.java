@@ -1,5 +1,5 @@
 /*
- * ป๓ฑÝ วๅลอ
+ * ์๊ธ ํ—ํฐ
  * https://www.acmicpc.net/problem/15953
  */
 
