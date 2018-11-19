@@ -1,5 +1,5 @@
 /*
- * 별찍기 - 6
+ * 별 찍기 - 6
  * https://www.acmicpc.net/problem/2443
  */
 
