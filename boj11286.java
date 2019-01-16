@@ -1,5 +1,5 @@
 /*
- * Àý´ñ°ª Èü
+ * ì ˆëŒ“ê°’ íž™
  * https://www.acmicpc.net/problem/11286
  */
 
