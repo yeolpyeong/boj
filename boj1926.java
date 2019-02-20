@@ -25,8 +25,8 @@ public class boj1926 {
 		Queue<Integer> q = new LinkedList<>();
 		int count = 0;
 		int max = 0;
-		for (int i = 0; i < n; ++i) {
-			for (int j = 0; j < m; ++j) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
 				if (map[i][j] > 0) {
 					++count;
 					q.add(500 * i + j);
