@@ -15,7 +15,7 @@ public class boj1987 {
 	public static void dfs(int cx, int cy) {
 		++count;
 		visited[map[cx][cy]] = true;
-		for (int d = 0; d < 4; ++d) {
+		for (int d = 0; d < 4; d++) {
 			int nx = cx + dx[d];
 			int ny = cy + dy[d];
 
@@ -42,9 +42,9 @@ public class boj1987 {
 		C = sc.nextInt();
 		map = new int[R][C];
 		visited = new boolean[26];
-		for (int i = 0; i < R; ++i) {
+		for (int i = 0; i < R; i++) {
 			String line = sc.next();
-			for (int j = 0; j < C; ++j) {
+			for (int j = 0; j < C; j++) {
 				map[i][j] = line.charAt(j) - 'A';
 			}
 		}
