@@ -19,7 +19,6 @@ public class boj5567 {
 		}
 
 		boolean[] visited = new boolean[n + 1];
-		int count = 0;
 		for (int i = 2; i <= n; i++) {
 			if (adj[1][i]) {
 				visited[i] = true;
@@ -31,6 +30,7 @@ public class boj5567 {
 			}
 		}
 
+		int count = 0;
 		for (int i = 2; i <= n; i++) {
 			if (visited[i]) {
 				count++;
