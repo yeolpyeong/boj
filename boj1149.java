@@ -17,6 +17,7 @@ public class boj1149 {
 				rgb[i][j] = sc.nextInt();
 			}
 		}
+		
 		int[][] dp = new int[N + 1][3];
 		for (int i = 1; i <= N; i++) {
 			for (int j = 0; j < 3; j++) {
