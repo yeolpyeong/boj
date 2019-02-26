@@ -17,6 +17,7 @@ public class boj1026 {
 		for (int i = 0; i < N; i++) {
 			A[i] = sc.nextInt();
 		}
+		
 		Arrays.sort(A);
 		for (int i = 0; i < N; i++) {
 			B[i] = sc.nextInt();
