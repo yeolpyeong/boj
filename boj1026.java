@@ -3,8 +3,6 @@
  * https://www.acmicpc.net/problem/1026
  */
 
-package boj;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
