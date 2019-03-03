@@ -9,13 +9,13 @@ import java.util.Scanner;
 public class boj10819 {
 	static int max = Integer.MIN_VALUE;
 
-	public static void swap(int[] A, int i, int j) {
+	static void swap(int[] A, int i, int j) {
 		int temp = A[i];
 		A[i] = A[j];
 		A[j] = temp;
 	}
 
-	public static void perm(int[] A, int pivot) {
+	static void perm(int[] A, int pivot) {
 		if (pivot == A.length) {
 			int sum = 0;
 			for (int i = 0; i < A.length - 1; i++) {
