@@ -1,6 +1,6 @@
 
 /*
- * Ελ°θΗΠ
+ * ν†µκ³„ν•™
  * https://www.acmicpc.net/problem/2108
  */
 
