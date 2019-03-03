@@ -11,7 +11,7 @@ public class boj10974 {
 	static int[] perm;
 	static boolean[] visited;
 
-	public static void dfs(int depth, int index) {
+	static void dfs(int depth, int index) {
 		perm[depth] = index;
 
 		if (depth == N) {
