@@ -32,6 +32,7 @@ class boj16972 {
 		int i = end - 1;
 		while (true) {
 			int j = i--;
+			
 			if (array[i] < array[j]) {
 				int k = end;
 				while (!(array[i] < array[--k])) {
