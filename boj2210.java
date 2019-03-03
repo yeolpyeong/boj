@@ -12,10 +12,11 @@ import java.util.StringTokenizer;
 
 public class boj2210 {
 	static final int[] dx = { 1, 0, -1, 0 }, dy = { 0, 1, 0, -1 };
+	
 	static int[][] board;
 	static Set<String> numbers = new HashSet<>();
 
-	public static void dfs(String number, int cx, int cy) {
+	static void dfs(String number, int cx, int cy) {
 		if (number.length() == 6) {
 			numbers.add(number);
 			return;
