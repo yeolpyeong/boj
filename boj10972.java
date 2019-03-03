@@ -58,8 +58,8 @@ class boj10972 {
 		}
 
 		if (nextPermutation(perm, 0, N)) {
-			for (int i = 0; i < N; i++) {
-				System.out.print(perm[i] + " ");
+			for (int p : perm) {
+				System.out.print(p + " ");
 			}
 		} else {
 			System.out.print(-1);
