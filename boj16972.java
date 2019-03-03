@@ -7,10 +7,10 @@
 import java.util.Scanner;
 
 class boj16972 {
-	static void swap(int[] array, int a, int b) {
-		int temp = array[a];
-		array[a] = array[b];
-		array[b] = temp;
+	static void swap(int[] array, int i, int j) {
+		int temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
 	}
 
 	static void reverse(int[] array, int begin, int end) {
@@ -25,7 +25,7 @@ class boj16972 {
 			return false;
 		}
 
-		if (begin + 1 == end) {
+		if (begin == end -1) {
 			return false;
 		}
 
