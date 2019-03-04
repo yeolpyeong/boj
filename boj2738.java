@@ -1,6 +1,6 @@
 
 /*
- * За·Д µЎјА
+ * н–‰л ¬ лЌ§м…€
  * https://www.acmicpc.net/problem/2738
  */
 
