@@ -1,5 +1,5 @@
 /*
- * ºü¸¥ A+B
+ * ë¹ ë¥¸ A+B
  * https://www.acmicpc.net/problem/15552
  */
 
