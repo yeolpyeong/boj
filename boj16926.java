@@ -24,9 +24,10 @@ class boj16926 {
 			}
 		}
 
-		while (R-- > 0) {
-			int C = 0;
-			while (Math.min(N, M) > 2 * C) {
+		int C = 0;
+		while (Math.min(N, M) > 2 * C) {
+			int D = R % (2 * (N + M - 4 * C) - 4);
+			while (D-- > 0) {
 				int temp = array[C][C];
 				for (int i = C; i < M - C - 1; i++) {
 					array[C][i] = array[C][i + 1];
@@ -41,9 +42,8 @@ class boj16926 {
 					array[i][C] = array[i - 1][C];
 				}
 				array[C + 1][C] = temp;
-
-				C++;
 			}
+			C++;
 		}
 
 		for (int i = 0; i < N; i++) {
