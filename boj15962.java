@@ -6,6 +6,6 @@
 
 class boj15962 {
 	public static void main(String[] args) {
-		System.out.print("ÆÄÀÌÆÃ!!");
+		System.out.print("파이팅!!");
 	}
 }
