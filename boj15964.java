@@ -1,6 +1,6 @@
 
 /*
- * �̻��� ��ȣ
+ * 이상한 기호
  * https://www.acmicpc.net/problem/15964
  */
 
