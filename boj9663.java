@@ -28,12 +28,12 @@ class boj9663 {
 		if (l == N) {
 			count++;
 			return;
-		} else {
-			for (int i = 0; i < N; i++) {
-				cols[l] = i;
-				if (promising(l)) {
-					dfs(l + 1);
-				}
+		}
+
+		for (int i = 0; i < N; i++) {
+			cols[l] = i;
+			if (promising(l)) {
+				dfs(l + 1);
 			}
 		}
 	}
