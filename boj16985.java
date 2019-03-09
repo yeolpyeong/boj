@@ -8,7 +8,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 import java.io.BufferedReader;
-import java.io.IOException;
 
 class boj16985 {
 	static final int size = 5, side = 4;
@@ -111,7 +110,7 @@ class boj16985 {
 		}
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
 		int[][][] maze = new int[size][size][size];
