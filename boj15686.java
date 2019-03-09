@@ -25,7 +25,7 @@ class boj15686 {
 	static int[][] map;
 	static ArrayList<Point> houseMap, chickenMap;
 
-	public static int calculateDistance(Stack<Integer> stack) {
+	static int calculateDistance(Stack<Integer> stack) {
 		int sum = 0;
 		for (Point h : houseMap) {
 			int min = Integer.MAX_VALUE;
@@ -44,7 +44,7 @@ class boj15686 {
 		return sum;
 	}
 
-	public static void dfs(Stack<Integer> stack, int idx) {
+	static void dfs(Stack<Integer> stack, int idx) {
 		if (stack.size() == M) {
 			dist = Math.min(dist, calculateDistance(stack));
 			return;
