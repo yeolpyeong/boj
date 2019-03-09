@@ -1,3 +1,4 @@
+
 /*
  * Maaaaaaaaaze
  * https://www.acmicpc.net/problem/16985
