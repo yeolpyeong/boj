@@ -1,28 +1,35 @@
+
 /*
  * 퇴사
  * https://www.acmicpc.net/problem/14501
  */
 
-package boj;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-import java.util.Scanner;
-
-public class boj14501 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int N = sc.nextInt();
+class boj14501 {
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int N = Integer.parseInt(br.readLine());
 		int[] T = new int[N + 1];
 		int[] P = new int[N + 1];
+		StringTokenizer st;
 		for (int i = 1; i <= N; i++) {
-			T[i] = sc.nextInt();
-			P[i] = sc.nextInt();
+			st = new StringTokenizer(br.readLine());
+			T[i] = Integer.parseInt(st.nextToken());
+			P[i] = Integer.parseInt(st.nextToken());
 		}
 
-		int[] DP = new int[N + 2];
+		int[] memoi = new int[N + 2];
 		for (int i = N; i >= 1; i--) {
-			int V = i + T[i] <= N + 1 ? DP[i + T[i]] + P[i] : 0;
-			DP[i] = Math.max(DP[i + 1], V);
+			int gain = 0;
+			if (i + T[i] <= N + 1) {
+				gain = memoi[i + T[i]] + P[i];
+			}
+			memoi[i] = Math.max(memoi[i + 1], gain);
 		}
-		System.out.print(DP[1]);
+
+		System.out.print(memoi[1]);
 	}
 }
