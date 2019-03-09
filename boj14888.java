@@ -8,7 +8,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 import java.io.BufferedReader;
-import java.io.IOException;
 
 class boj14888 {
 	static int max = Integer.MIN_VALUE, min = Integer.MAX_VALUE;
@@ -52,7 +51,7 @@ class boj14888 {
 		}
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int N = Integer.parseInt(br.readLine());
 		A = new int[N];
