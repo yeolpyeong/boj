@@ -1,80 +1,88 @@
+
 /*
  * 치킨 배달
  * https://www.acmicpc.net/problem/15686
  */
 
-package boj;
-
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Stack;
+import java.util.StringTokenizer;
 
-public class boj15686 {
-	static int N, M, nChickenRestaurant, min = Integer.MAX_VALUE;
-	static int[][] map, chickenMap;
+class boj15686 {
+	static class Point {
+		int x, y;
 
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		N = sc.nextInt();
-		M = sc.nextInt();
-		map = new int[N + 1][N + 1];
-		for (int i = 1; i <= N; i++) {
-			for (int j = 1; j <= N; j++) {
-				map[i][j] = sc.nextInt();
-			}
+		public Point(int x, int y) {
+			this.x = x;
+			this.y = y;
 		}
-
-		findChickenRestaurant();
-		Stack<Integer> storage = new Stack();
-		dfs(storage, 1);
-		System.out.print(min);
 	}
 
-	public static void findChickenRestaurant() {
-		chickenMap = new int[14][2];
-		int temp = 1;
-		for (int i = 1; i <= N; i++) {
-			for (int j = 1; j <= N; j++) {
-				if (map[i][j] == 2) {
-					chickenMap[temp][0] = i;
-					chickenMap[temp][1] = j;
-					temp++;
-				}
-			}
-		}
-		nChickenRestaurant = temp - 1;
-	}
+	static int M, dist = Integer.MAX_VALUE;
+	static int[][] map;
+	static ArrayList<Point> houseMap, chickenMap;
 
-	public static void dfs(Stack<Integer> storage, int index) {
-		if (storage.size() == M) {
-			int distance = calculateDistance(map, storage);
-			min = Math.min(min, distance);
-			return;
-		}
-
-		if (index > nChickenRestaurant)
-			return;
-
-		storage.push(index);
-		dfs(storage, index + 1);
-		storage.pop();
-		dfs(storage, index + 1);
-	}
-
-	public static int calculateDistance(int[][] map, Stack<Integer> storage) {
+	public static int calculateDistance(Stack<Integer> stack) {
 		int sum = 0;
-		for (int i = 1; i <= N; i++) {
-			for (int j = 1; j <= N; j++) {
+		for (Point h : houseMap) {
+			int min = Integer.MAX_VALUE;
+			int hx = h.x;
+			int hy = h.y;
+			for (int s : stack) {
+				int cx = chickenMap.get(s).x;
+				int cy = chickenMap.get(s).y;
+				int xd = Math.abs(hx - cx);
+				int yd = Math.abs(hy - cy);
+				min = Math.min(min, xd + yd);
+			}
+			sum += min;
+		}
+
+		return sum;
+	}
+
+	public static void dfs(Stack<Integer> stack, int idx) {
+		if (stack.size() == M) {
+			dist = Math.min(dist, calculateDistance(stack));
+			return;
+		}
+
+		if (idx == chickenMap.size()) {
+			return;
+		}
+
+		stack.push(idx);
+		dfs(stack, idx + 1);
+		stack.pop();
+		dfs(stack, idx + 1);
+	}
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int N = Integer.parseInt(st.nextToken());
+		M = Integer.parseInt(st.nextToken());
+		map = new int[N][N];
+		houseMap = new ArrayList<>();
+		chickenMap = new ArrayList<>();
+		for (int i = 0; i < N; i++) {
+			st = new StringTokenizer(br.readLine());
+			for (int j = 0; j < N; j++) {
+				map[i][j] = Integer.parseInt(st.nextToken());
 				if (map[i][j] == 1) {
-					int min = Integer.MAX_VALUE;
-					for (int s : storage) {
-						int xd = Math.abs(i - chickenMap[s][0]);
-						int yd = Math.abs(j - chickenMap[s][1]);
-						min = Math.min(min, xd + yd);
-					}
-					sum += min;
+					houseMap.add(new Point(i, j));
+				} else if (map[i][j] == 2) {
+					chickenMap.add(new Point(i, j));
 				}
 			}
 		}
-		return sum;
+
+		Stack<Integer> stack = new Stack<>();
+		dfs(stack, 0);
+
+		System.out.print(dist);
 	}
 }
