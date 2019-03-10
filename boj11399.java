@@ -19,8 +19,9 @@ class boj11399 {
 			P[i] = Integer.parseInt(st.nextToken());
 		}
 
-		int sum = 0;
 		Arrays.sort(P);
+		
+		int sum = 0;
 		for (int i = 0; i < N; i++) {
 			sum += (N - i) * P[i];
 		}
