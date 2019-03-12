@@ -31,7 +31,7 @@ class boj11559 {
 			for (int i = ROW; i >= 1; i--) {
 				if (map[i][j] == '.') {
 					step++;
-				} else if (step != 0) {
+				} else if (step > 0) {
 					map[i + step][j] = map[i][j];
 					map[i][j] = '.';
 				}
