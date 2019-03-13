@@ -1,9 +1,8 @@
+
 /*
  * 쿼드트리
  * https://www.acmicpc.net/problem/1992
  */
-
-package boj;
 
 import java.util.Scanner;
 
