@@ -23,12 +23,13 @@ class boj16234 {
 		}
 	}
 
-	static int L, R;
+	static int N, L, R;
+	static int[][] A;
+	static ArrayList<ArrayList<Point>> adj;
 
-	static ArrayList<ArrayList<Point>> open(int[][] map) {
-		int N = map.length;
+	static void open() {
 		Queue<Point> q = new LinkedList<>();
-		ArrayList<ArrayList<Point>> adj = new ArrayList<>();
+		adj = new ArrayList<>();
 		int union = -1;
 		boolean[][] visited = new boolean[N][N];
 		for (int i = 0; i < N; i++) {
@@ -59,7 +60,7 @@ class boj16234 {
 							continue;
 						}
 
-						int dist = Math.abs(map[cx][cy] - map[nx][ny]);
+						int dist = Math.abs(A[cx][cy] - A[nx][ny]);
 						if (dist >= L && dist <= R) {
 							q.add(new Point(nx, ny));
 							adj.get(union).add(new Point(nx, ny));
@@ -69,19 +70,17 @@ class boj16234 {
 				}
 			}
 		}
-		return adj;
 	}
 
-	static void move(int[][] map, ArrayList<ArrayList<Point>> adj) {
-		int N = map.length;
+	static void move() {
 		for (int i = 0; i < adj.size(); i++) {
 			ArrayList<Point> union = adj.get(i);
 			int sum = 0;
 			for (Point country : union) {
-				sum += map[country.x][country.y];
+				sum += A[country.x][country.y];
 			}
 			for (Point country : union) {
-				map[country.x][country.y] = sum / union.size();
+				A[country.x][country.y] = sum / union.size();
 			}
 		}
 	}
@@ -89,10 +88,10 @@ class boj16234 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken());
+		N = Integer.parseInt(st.nextToken());
 		L = Integer.parseInt(st.nextToken());
 		R = Integer.parseInt(st.nextToken());
-		int[][] A = new int[N][N];
+		A = new int[N][N];
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < N; j++) {
@@ -101,10 +100,9 @@ class boj16234 {
 		}
 
 		int moving = -1;
-		ArrayList<ArrayList<Point>> adj;
 		do {
-			adj = open(A);
-			move(A, adj);
+			open();
+			move();
 			moving++;
 		} while (adj.size() != N * N);
 
