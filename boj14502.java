@@ -1,9 +1,8 @@
+
 /*
  * 연구소
  * https://www.acmicpc.net/problem/14502
  */
-
-package boj;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
