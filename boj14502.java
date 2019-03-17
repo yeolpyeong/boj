@@ -9,7 +9,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class boj14502 {
-	static final int[] dx = { -1, 0, 1, 0 }, dy = { 0, 1, 0, -1 };
+	static final int[] dx = { 1, -1, 0, 0 }, dy = { 0, 0, 1, -1 };
 
 	static int N, M, nWall, nVirus, minNVirus = Integer.MAX_VALUE;
 	static int[][] map, visited;
