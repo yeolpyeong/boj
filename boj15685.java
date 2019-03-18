@@ -1,25 +1,32 @@
+
 /*
  * 드래곤 커브
  * https://www.acmicpc.net/problem/15685
  */
-
-package boj;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class boj15685 {
+class boj15685 {
+	static final int[] dx = { 1, 0, -1, 0 }, dy = { 0, -1, 0, 1 };
+
 	static int N;
-	static int[] dx = { 1, 0, -1, 0 };
-	static int[] dy = { 0, -1, 0, 1 };
 	static int[][] map = new int[101][101];
-	static Stack<Integer> storage1;
-	static Stack<Integer> storage2;
+	static Stack<Integer> storage1, storage2;
 	static Queue<Integer> storage3;
 
-	public static void main(String[] args) {
+	static void makeDragonCurve() {
+		while (!storage1.isEmpty()) {
+			int d = storage1.pop();
+			storage2.push((d + 1) % 4);
+			storage3.add((d + 1) % 4);
+		}
+		storage1 = (Stack<Integer>) storage2.clone();
+	}
+
+	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		N = sc.nextInt();
 		while (N-- > 0) {
@@ -56,15 +63,7 @@ public class boj15685 {
 				}
 			}
 		}
+		
 		System.out.print(count);
-	}
-
-	public static void makeDragonCurve() {
-		while (!storage1.isEmpty()) {
-			int d = storage1.pop();
-			storage2.push((d + 1) % 4);
-			storage3.add((d + 1) % 4);
-		}
-		storage1 = (Stack<Integer>) storage2.clone();
 	}
 }
