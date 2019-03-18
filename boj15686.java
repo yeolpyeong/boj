@@ -39,7 +39,6 @@ class boj15686 {
 			}
 			sum += min;
 		}
-
 		return sum;
 	}
 
