@@ -1,96 +1,98 @@
+
 /*
  * 톱니바퀴
- * https://www.acmicpc.net/problem/14891
+ * https://www.acmicpc.net/problem/14891 
  */
 
-package boj;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-import java.util.Scanner;
-
-public class boj14891 {
-	static int[][] cogWheels = new int[5][9];
-
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		for (int i = 1; i <= 4; i++) {
-			String row = sc.next();
-			for (int j = 1; j <= 8; j++) {
-				cogWheels[i][j] = row.charAt(j - 1) == '0' ? 0 : 1;
-			}
+class boj14891 {
+	static void rotate(int[][] cogWheels, int N, int D) {
+		int temp;
+		if (D == 1) {
+			temp = cogWheels[N][8];
+			cogWheels[N][8] = cogWheels[N][7];
+			cogWheels[N][7] = cogWheels[N][6];
+			cogWheels[N][6] = cogWheels[N][5];
+			cogWheels[N][5] = cogWheels[N][4];
+			cogWheels[N][4] = cogWheels[N][3];
+			cogWheels[N][3] = cogWheels[N][2];
+			cogWheels[N][2] = cogWheels[N][1];
+			cogWheels[N][1] = temp;
+		} else if (D == -1) {
+			temp = cogWheels[N][1];
+			cogWheels[N][1] = cogWheels[N][2];
+			cogWheels[N][2] = cogWheels[N][3];
+			cogWheels[N][3] = cogWheels[N][4];
+			cogWheels[N][4] = cogWheels[N][5];
+			cogWheels[N][5] = cogWheels[N][6];
+			cogWheels[N][6] = cogWheels[N][7];
+			cogWheels[N][7] = cogWheels[N][8];
+			cogWheels[N][8] = temp;
 		}
-
-		int K = sc.nextInt();
-		while (K-- > 0) {
-			int N = sc.nextInt();
-			int D = sc.nextInt();
-			int[] rotated = new int[4];
-			boj14891(N, D, checkRotable(N), rotated);
-		}
-		System.out.print(scoring());
 	}
 
-	public static int[] checkRotable(int N) {
-		int[] rotable = new int[4];
-		rotable[1] = cogWheels[1][3] != cogWheels[2][7] ? 1 : 0;
-		rotable[2] = cogWheels[2][3] != cogWheels[3][7] ? 1 : 0;
-		rotable[3] = cogWheels[3][3] != cogWheels[4][7] ? 1 : 0;
-		return rotable;
-	}
-
-	public static void boj14891(int N, int D, int[] rotable, int[] rotated) {
-		rotate(cogWheels[N], D);
+	static void solve(int[][] cogWheels, int N, int D, boolean[] rotable, boolean[] rotated) {
+		rotate(cogWheels, N, D);
 		switch (N) {
 		case 1:
-			if (rotable[1] == 1 && rotated[1] == 0) {
-				rotated[1] = 1;
-				boj14891(2, -D, rotable, rotated);
+			if (rotable[1] && !rotated[1]) {
+				rotated[1] = true;
+				solve(cogWheels, 2, -D, rotable, rotated);
 			}
 			break;
 		case 4:
-			if (rotable[3] == 1 && rotated[3] == 0) {
-				rotated[3] = 1;
-				boj14891(3, -D, rotable, rotated);
+			if (rotable[3] && !rotated[3]) {
+				rotated[3] = true;
+				solve(cogWheels, 3, -D, rotable, rotated);
 			}
 			break;
 		default:
-			if (rotable[N - 1] == 1 && rotated[N - 1] == 0) {
-				rotated[N - 1] = 1;
-				boj14891(N - 1, -D, rotable, rotated);
+			if (rotable[N - 1] && !rotated[N - 1]) {
+				rotated[N - 1] = true;
+				solve(cogWheels, N - 1, -D, rotable, rotated);
 			}
-			if (rotable[N] == 1 && rotated[N] == 0) {
-				rotated[N] = 1;
-				boj14891(N + 1, -D, rotable, rotated);
+			if (rotable[N] && !rotated[N]) {
+				rotated[N] = true;
+				solve(cogWheels, N + 1, -D, rotable, rotated);
 			}
 			break;
 		}
 	}
 
-	public static void rotate(int[] cogWheel, int D) {
-		int temp = 4444;
-		if (D == 1) {
-			temp = cogWheel[8];
-			cogWheel[8] = cogWheel[7];
-			cogWheel[7] = cogWheel[6];
-			cogWheel[6] = cogWheel[5];
-			cogWheel[5] = cogWheel[4];
-			cogWheel[4] = cogWheel[3];
-			cogWheel[3] = cogWheel[2];
-			cogWheel[2] = cogWheel[1];
-			cogWheel[1] = temp;
-		} else if (D == -1) {
-			temp = cogWheel[1];
-			cogWheel[1] = cogWheel[2];
-			cogWheel[2] = cogWheel[3];
-			cogWheel[3] = cogWheel[4];
-			cogWheel[4] = cogWheel[5];
-			cogWheel[5] = cogWheel[6];
-			cogWheel[6] = cogWheel[7];
-			cogWheel[7] = cogWheel[8];
-			cogWheel[8] = temp;
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int[][] cogWheels = new int[5][9];
+		for (int i = 1; i <= 4; i++) {
+			String line = br.readLine();
+			for (int j = 1; j <= 8; j++) {
+				cogWheels[i][j] = line.charAt(j - 1) - '0';
+			}
 		}
-	}
+		int K = Integer.parseInt(br.readLine());
+		StringTokenizer st;
+		while (K-- > 0) {
+			st = new StringTokenizer(br.readLine());
+			int N = Integer.parseInt(st.nextToken());
+			int D = Integer.parseInt(st.nextToken());
 
-	public static int scoring() {
-		return cogWheels[1][1] + 2 * cogWheels[2][1] + 4 * cogWheels[3][1] + 8 * cogWheels[4][1];
+			boolean[] rotable = new boolean[4];
+			for (int k = 1; k < 4; k++) {
+				if (cogWheels[k][3] != cogWheels[k + 1][7]) {
+					rotable[k] = true;
+				}
+			}
+			boolean[] rotated = new boolean[4];
+			solve(cogWheels, N, D, rotable, rotated);
+		}
+
+		int score = 0;
+		for (int i = 1; i <= 4; i++) {
+			score += Math.pow(2, i - 1) * cogWheels[i][1];
+		}
+
+		System.out.print(score);
 	}
 }
