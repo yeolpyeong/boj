@@ -20,15 +20,15 @@ class boj17069 {
 				}
 
 				for (int d = 0; d < 3; d++) {
-					if (d != 1 && memoi[i][j - 1][d] > 0) {
+					if (d != 1) {
 						memoi[i][j][0] += memoi[i][j - 1][d];
 					}
 
-					if (d != 0 && memoi[i - 1][j][d] > 0) {
+					if (d != 0) {
 						memoi[i][j][1] += memoi[i - 1][j][d];
 					}
 
-					if (memoi[i - 1][j - 1][d] > 0 && map[i][j - 1] == 0 && map[i - 1][j] == 0) {
+					if (map[i][j - 1] == 0 && map[i - 1][j] == 0) {
 						memoi[i][j][2] += memoi[i - 1][j - 1][d];
 					}
 				}
