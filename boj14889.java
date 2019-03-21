@@ -27,7 +27,7 @@ class boj14889 {
 		return Math.abs(s1 - s2);
 	}
 
-	static void dfs(int n, int m, int[] g) {
+	static void dfs(int[] g, int n, int m) {
 		if (n == N / 2) {
 			min = Math.min(min, scoring(g));
 			return;
@@ -54,7 +54,7 @@ class boj14889 {
 			}
 		}
 
-		dfs(0, 1, new int[N + 1]);
+		dfs(new int[N + 1], 0, 1);
 
 		System.out.print(min);
 	}
