@@ -24,7 +24,7 @@ class boj11559 {
 
 	static int[][] map;
 
-	static void restore() {
+	static void moveDown() {
 		int step;
 		for (int j = COL; j >= 1; j--) {
 			step = 0;
@@ -104,10 +104,10 @@ class boj11559 {
 		}
 
 		int count = 0;
-		restore();
+		moveDown();
 		while (bomb()) {
 			count++;
-			restore();
+			moveDown();
 		}
 
 		System.out.print(count);
