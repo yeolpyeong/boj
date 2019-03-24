@@ -90,8 +90,6 @@ class boj16236 {
 		N = Integer.parseInt(br.readLine());
 		StringTokenizer st;
 		map = new int[N][N];
-		x = -1;
-		y = -1;
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
 			for (int j = 0; j < N; j++) {
