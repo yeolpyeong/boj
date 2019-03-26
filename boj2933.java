@@ -151,14 +151,11 @@ class boj2933 {
 		int N = Integer.parseInt(br.readLine());
 		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < N; i++) {
+			char d = i % 2 == 0 ? 'L' : 'R';
 			int h = R - Integer.parseInt(st.nextToken());
-			if (i % 2 == 0) {
-				Point destoryed = throwAStick('L', h);
-				isItSeparated(destoryed);
-			} else {
-				Point destoryed = throwAStick('R', h);
-				isItSeparated(destoryed);
-			}
+
+			Point destoryed = throwAStick(d, h);
+			isItSeparated(destoryed);
 		}
 
 		for (int i = 0; i < R; i++) {
