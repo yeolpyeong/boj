@@ -1,7 +1,7 @@
 
 /*
- * È¿À²ÀûÀÎ ÇØÅ·
- *https://www.acmicpc.net/problem/1325 
+ * íš¨ìœ¨ì ì¸ í•´í‚¹
+ * https://www.acmicpc.net/problem/1325 
  */
 
 import java.io.BufferedReader;
