@@ -1,6 +1,6 @@
 
 /*
- * »ýÀÏ Ãâ·ÂÇÏ±â
+ * ìƒì¼ ì¶œë ¥í•˜ê¸°
  * https://www.acmicpc.net/problem/2555
  */
 
