@@ -22,7 +22,6 @@ class boj12100 {
 					copy[i][j] = board[N - 1 - j][i];
 				}
 			}
-
 			board = copy;
 		}
 	}
