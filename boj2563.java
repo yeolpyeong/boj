@@ -1,14 +1,13 @@
+
 /*
  * 색종이
  * https://www.acmicpc.net/problem/2563
  */
 
-package boj;
-
 import java.util.Scanner;
 
-public class boj2563 {
-	public static void main(String[] args) {
+class boj2563 {
+	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		int[][] drawingPaper = new int[100][100];
@@ -23,6 +22,7 @@ public class boj2563 {
 				}
 			}
 		}
+		
 		System.out.print(area);
 	}
 }
