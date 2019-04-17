@@ -58,7 +58,7 @@ class boj10845 {
 		}
 
 		int empty() {
-			return front == null ? 1 : 0;
+			return size == 0 ? 1 : 0;
 		}
 
 		int front() {
