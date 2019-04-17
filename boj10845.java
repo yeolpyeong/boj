@@ -45,9 +45,6 @@ class boj10845 {
 				return -1;
 			} else {
 				front = front.next;
-				if (front == null) {
-					rear = null;
-				}
 				size--;
 			}
 			return data;
