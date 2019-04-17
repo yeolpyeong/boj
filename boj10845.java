@@ -27,8 +27,8 @@ class boj10845 {
 			this.size = 0;
 		}
 
-		void push(int element) {
-			Node node = new Node(element);
+		void push(int data) {
+			Node node = new Node(data);
 			if (empty() == 1) {
 				front = node;
 				rear = node;
@@ -40,7 +40,7 @@ class boj10845 {
 		}
 
 		int pop() {
-			int element = front();
+			int data = front();
 			if (empty() == 1) {
 				return -1;
 			} else {
@@ -50,7 +50,7 @@ class boj10845 {
 				}
 				size--;
 			}
-			return element;
+			return data;
 		}
 
 		int size() {
@@ -79,8 +79,8 @@ class boj10845 {
 			int print = -1;
 			switch (command) {
 			case "push":
-				int element = sc.nextInt();
-				q.push(element);
+				int data = sc.nextInt();
+				q.push(data);
 				break;
 			case "pop":
 				print = q.pop();
@@ -98,6 +98,7 @@ class boj10845 {
 				print = q.back();
 				break;
 			}
+			
 			if (!command.equals("push")) {
 				System.out.println(print);
 			}
