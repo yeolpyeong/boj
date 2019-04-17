@@ -1,6 +1,6 @@
 
 /*
- * ╫╨ец
+ * Л┼╓М┐²
  * https://www.acmicpc.net/problem/10828
  */
 
