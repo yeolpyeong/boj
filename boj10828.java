@@ -39,8 +39,8 @@ class boj10828 {
 				return -1;
 			} else {
 				top = top.next;
+				size--;
 			}
-			size--;
 			return data;
 		}
 
