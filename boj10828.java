@@ -60,26 +60,26 @@ class boj10828 {
 	public static void main(String[] args) throws Exception {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
-		Stack stack = new Stack();
+		Stack stk = new Stack();
 		while (N-- > 0) {
 			String command = sc.next();
 			int print = -1;
 			switch (command) {
 			case "push":
 				int data = sc.nextInt();
-				stack.push(data);
+				stk.push(data);
 				break;
 			case "pop":
-				print = stack.pop();
+				print = stk.pop();
 				break;
 			case "size":
-				print = stack.size();
+				print = stk.size();
 				break;
 			case "empty":
-				print = stack.empty();
+				print = stk.empty();
 				break;
 			case "top":
-				print = stack.top();
+				print = stk.top();
 				break;
 			}
 
